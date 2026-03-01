@@ -19,7 +19,7 @@
       }
     ]
   },
-  "logo": "/favicon.svg",
+  "logo": "/branding.svg",
   "navbar": {
     "links": [],
     "primary": {
@@ -60,6 +60,11 @@
     "404": {
       "title": "Not Found",
       "description": "Invalid Article Path"
+    }
+  },
+  "api": {
+    "playground": {
+      "proxy": false
     }
   }
 }
