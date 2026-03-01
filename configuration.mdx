@@ -1,0 +1,248 @@
+---
+title: "Configuration"
+---
+
+Configuration file uses [YAML](https://yaml.org/) as their serialization format, please follow structure while editing it.
+
+### Update Checker
+
+Should plugin automatically check if newer version of AntiBot is available.
+
+```yaml
+update-checker: true
+```
+
+### Verification Procedure Timeout
+
+How much time _(in seconds)_ player have to complete entire verification procedure list.
+
+```yaml
+verification-procedure-timeout: 60
+```
+
+### Verification Challenge Pool
+
+This field contains every challenge which may be drawn to player.
+
+```yaml expandable
+verification-challenge-pool:
+  - type: COLLECT_ITEMS
+    translation: Collect {amount}x Iron Ore.
+    extra:
+      gather: IRON_ORE
+  - type: COLLECT_ITEMS
+    translation: Collect {amount}x Diamond.
+    extra:
+      gather: DIAMOND_ORE
+  - type: COLLECT_ITEMS
+    translation: Collect {amount}x Coal Ore.
+    extra:
+      gather: COAL_ORE
+  - type: COLLECT_ITEMS
+    translation: Collect {amount}x Logs.
+    extra:
+      gather: LOG
+  - type: CLICK_BLOCK
+    translation: Use anvil {times} times.
+    extra:
+      click: ANVIL
+  - type: CLICK_BLOCK
+    translation: Use crafting table {times} times.
+    extra:
+      click: CRAFTING_TABLE
+  - type: CLICK_BLOCK
+    translation: Use furnace {times} times.
+    extra:
+      click: FURNACE
+  - type: SNEAK
+    translation: Sneak {times} times.
+  - type: WALK_TO
+    translation: Follow particles displayed above you.
+  - type: EAT_FOOD
+    translation: Eat until your food bar is full.
+```
+
+**Entry Structure**
+
+```yaml
+type: Enum[COLLECT_ITEMS,CLICK_BLOCK,SNEAK,WALK_TO,EAT_FOOD]
+  translation: String[] # Placeholders: {amount}, {times}
+  extra: # Extra Data
+    gather: Enum[Item] # Only for type == COLLECT_ITEMS
+    click: Enum[Item]  # Only for type == CLICK_BLOCK
+    red: Float         # Only for type == WALK_TO
+    green: Float       # Only for type == WALK_TO
+    blue: Float        # Only for type == WALK_TO
+    scale: Float       # Only for type == WALK_TO
+```
+
+**References:**
+
+- [Enum Item](https://github.com/Elytrium/LimboAPI/blob/master/api/src/main/java/net/elytrium/limboapi/api/material/Item.java)
+
+### Verification Procedure
+
+This field contains entire verification procedure which will be applied to player before they'll be able to join your server.
+
+```yaml expandable
+verification-procedure:
+  - trigger: BRAND_CHECK
+  - trigger: SETTINGS_CHECK
+  - trigger: GRAVITY_CHECK
+    expression: onlineMode
+  - trigger: CAPTCHA_CHECK
+    expression: '!onlineMode && random'
+  - trigger: CHALLENGE
+    expression: '!onlineMode || !brandCheck || !settingsCheck'
+```
+
+**Entry Structure**
+
+```yaml
+trigger: Enum[BRAND_CHECK,SETTINGS_CHECK,GRAVITY_CHECK,CAPTCHA_CHECKCHALLENGE]
+expression: String
+```
+
+**Available Placeholders for Expression:**
+
+- `onlineMode` \
+  Returns: **Boolean**
+- `protocol`\
+  Returns: **Integer**
+- `brandCheck`\
+  Returns: **Boolean**
+- `settingsCheck`\
+  Returns: **Boolean**
+- `ping`\
+  Returns: **Integer**
+
+**References:**
+
+- [Boolean Expression](https://en.wikipedia.org/wiki/Boolean_expression)
+
+### Captcha Fake Code Length
+
+How many letters should have fake code behind real captcha code.
+
+```yaml
+captcha-fake-code-length: 4
+```
+
+### Analyze Addresses
+
+Should player ip address be analyzed by [ip-api.com](http://ip-api.com) upon joining.
+
+```yaml
+analyze-addresses: true
+```
+
+### Prevent Proxy Connections
+
+Should players flagged as Hosting, Proxy and/or VPN be blocked.
+
+```yaml
+prevent-proxy-connections: true
+```
+
+### Blocked ISPs
+
+A list of blocked Internet Service Providers which'll not be able to join server.
+
+```yaml
+blocked-isp: []
+```
+
+### Blocked Countries
+
+A list of blocked countries in [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166) or [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) which'll not be able to join server.
+
+```yaml
+blocked-countries: []
+```
+
+### Verification Persistance Duration
+
+How long _(in seconds)_ player will skip next verifications after successful once.
+
+```yaml
+verification-persistence-duration: 2592000
+```
+
+### Verification Persistance Duration
+
+How often _(in seconds)_ expired verification records should be removed.
+
+```yaml
+cleanup-interval: 86400
+```
+
+### Database Type
+
+Type of database in which verification cache records will be stored.\
+Available: `SQLITE, MYSQL`
+
+```yaml
+database-type: SQLITE
+```
+
+### Database Hostname
+
+Address for database, only used if database type is `MYSQL`.
+
+```yaml
+hostname: localhost
+```
+
+### Database Port
+
+Port of database, only used if database type is `MYSQL`.
+
+```yaml
+port: 3306
+```
+
+### Database Name
+
+Name of database, only used if database type is `MYSQL`.
+
+```yaml
+database: antibot
+```
+
+### Database Username
+
+Database account name, only used if database type is `MYSQL`.
+
+```yaml
+username: root
+```
+
+### Database Password
+
+Database account password, only used if database type is `MYSQL`.
+
+```yaml
+password: password
+```
+
+### Database SSL
+
+Should [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) be used in comunication with database.
+
+```yaml
+ssl: false
+```
+
+### Database Pool Size
+
+How large should be connection pool to database.
+
+```yaml
+pool-size: 4
+```
+
+### Database Connection Timeout
+
+```yaml
+timeout: 30000
+```
