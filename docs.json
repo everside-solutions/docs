@@ -13,8 +13,8 @@
       {
         "dropdown": "AntiBot",
         "pages": [
-          "getting-started",
-          "configuration"
+          "src/antibot/getting-started",
+          "src/antibot/configuration"
         ]
       }
     ]
@@ -66,5 +66,8 @@
     "playground": {
       "proxy": false
     }
+  },
+  "banner": {
+    "dismissible": false
   }
 }
