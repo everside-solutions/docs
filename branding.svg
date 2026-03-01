@@ -11,7 +11,7 @@
             </stop>
         </radialGradient>
     </defs>
-    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="64" font-family="Inter, sans-serif" font-weight="700" fill="url(#swirl)" pointer-events="none">
+    <text x="0%" y="0%" text-anchor="middle" dominant-baseline="middle" font-size="64" font-family="Inter, sans-serif" font-weight="700" fill="url(#swirl)" pointer-events="none">
         eversi.de
     </text>
 </svg>
