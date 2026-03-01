@@ -13,8 +13,8 @@
       {
         "dropdown": "AntiBot",
         "pages": [
-          "src/antibot/getting-started",
-          "src/antibot/configuration"
+          "antibot/getting-started",
+          "antibot/configuration"
         ]
       }
     ]
