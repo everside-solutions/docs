@@ -1,27 +1,27 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "almond",
+  "name": "everside solutions",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#b000ff",
+    "light": "#b000ff",
+    "dark": "#b000ff"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "groups": []
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
+    "dropdowns": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "dropdown": "AntiBot",
+        "pages": [
+          "getting-started",
+          "configuration"
+        ]
       }
-    ],
+    ]
+  },
+  "logo": "/favicon.svg",
+  "navbar": {
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Dashboard",
@@ -42,9 +42,24 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/everside-solutions",
+      "discord": "https://discord.gg/C8dF6zkYff"
+    }
+  },
+  "appearance": {
+    "strict": true,
+    "default": "dark"
+  },
+  "styling": {
+    "codeblocks": "dark"
+  },
+  "icons": {
+    "library": "tabler"
+  },
+  "errors": {
+    "404": {
+      "title": "Not Found",
+      "description": "Invalid Article Path"
     }
   }
 }
