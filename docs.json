@@ -7,22 +7,41 @@
     "light": "#b000ff",
     "dark": "#b000ff"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/assets/img/icon.svg",
   "navigation": {
     "dropdowns": [
       {
         "dropdown": "AntiBot",
+        "icon": "shield",
+        "color": {
+          "light": "#00f8ff",
+          "dark": "#00f8ff"
+        },
+        "description": "Advanced AntiBot Solution",
         "pages": [
           "antibot/getting-started",
           "antibot/configuration"
         ]
       },
       {
-        "dropdown": "esProxy"
+        "dropdown": "esProxy",
+        "icon": "server",
+        "color": {
+          "light": "#00AAAA",
+          "dark": "#00AAAA"
+        },
+        "description": "Advanced Testing Tool",
+        "pages": [
+          "esproxy/getting-started",
+          {
+            "group": "Commands",
+            "pages": []
+          }
+        ]
       }
     ]
   },
-  "logo": "/branding.svg",
+  "logo": "/assets/img/branding.svg",
   "navbar": {
     "links": [],
     "primary": {
@@ -33,15 +52,8 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy"
+    ]
   },
   "footer": {
     "socials": {
