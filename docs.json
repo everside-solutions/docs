@@ -16,6 +16,9 @@
           "antibot/getting-started",
           "antibot/configuration"
         ]
+      },
+      {
+        "dropdown": "esProxy"
       }
     ]
   },
