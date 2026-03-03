@@ -25,7 +25,7 @@
       },
       {
         "dropdown": "esProxy",
-        "icon": "server",
+        "icon": "knife-kitchen",
         "color": {
           "light": "#00AAAA",
           "dark": "#00AAAA"
@@ -35,7 +35,11 @@
           "esproxy/getting-started",
           {
             "group": "Commands",
-            "pages": []
+            "pages": [
+              "esproxy/commands/connect",
+              "esproxy/commands/connectbot",
+              "esproxy/commands/mother"
+            ]
           }
         ]
       }
@@ -51,9 +55,7 @@
     }
   },
   "contextual": {
-    "options": [
-      "copy"
-    ]
+    "options": []
   },
   "footer": {
     "socials": {
