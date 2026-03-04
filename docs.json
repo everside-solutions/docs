@@ -9,13 +9,13 @@
   },
   "favicon": "/assets/img/icon.svg",
   "navigation": {
-    "dropdowns": [
+    "products": [
       {
-        "dropdown": "AntiBot",
+        "product": "AntiBot",
         "icon": "shield",
         "color": {
-          "light": "#00f8ff",
-          "dark": "#00f8ff"
+          "light": "#ffffff",
+          "dark": "#ffffff"
         },
         "description": "Advanced AntiBot Solution",
         "pages": [
@@ -24,13 +24,13 @@
         ]
       },
       {
-        "dropdown": "esProxy",
-        "icon": "knife-kitchen",
+        "product": "esProxy",
+        "icon": "chess",
         "color": {
-          "light": "#00AAAA",
-          "dark": "#00AAAA"
+          "light": "#ffffff",
+          "dark": "#ffffff"
         },
-        "description": "Advanced Testing Tool",
+        "description": "Advanced tool for testing servers.",
         "pages": [
           "esproxy/getting-started",
           {
