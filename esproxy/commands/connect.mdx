@@ -2,28 +2,21 @@
 title: ",connect"
 ---
 
+**Group:** <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>\
+**Aliases:** `,join`
+
+### Description
+
 A command that connect user to specified remote server.
 
 ### Parameters
 
 <Tabs>
   <Tab title="Host">
-    Address of server where you'll be connected.
-
-    **Examples:**
-
-    - mc.hypixel.net
-    - 21.37.42.00
+    Address of server where user will be connected.
   </Tab>
   <Tab title="Port">
-    Port of server where you'll be connected.\
-    **Range:** 0 - 65535
-
-    **Examples:**
-
-    - 25565
-    - 2137
-    - 42069
+    Port of server where user will be connected.
 
     <Tip>
       If you provide `0` as port, proxy will try to automatically resolve it using `_minecraft` SRV domain record.
@@ -32,32 +25,31 @@ A command that connect user to specified remote server.
   <Tab title="Proxy">
     Type of proxy address which'll be used to connect with remote server.
 
-    **Types:**
+    **Proxy Address Types:**
 
-    | Name            | Description                                                                                                                                                                                                                              | Requirement  |
-    | :-------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-    | **PUBLIC**      | An address from public proxy lists.                                                                                                                                                                                                      | **NONE**     |
-    | **PRIVATE**     | An address purchased from a proxy seller with limited number of users.                                                                                                                                                                   | **STANDARD** |
-    | **RESIDENTIAL** | An proxy address that uses a real IP from a home device to make connection appear as legitimate.<br />_More Information:_ [_en.wikipedia.org/wiki/Proxy_server_](https://en.wikipedia.org/wiki/Proxy_server#Residential_proxy_\(RESIP\)) | **PREMIUM**  |
-    | **OWN**         | An pool of addresses managed directly by user with `,ownproxies` command.                                                                                                                                                                | **STANDARD** |
+    | Name            | Description                                                                                      | Requirement                           |
+    | :-------------: | :----------------------------------------------------------------------------------------------- | :-----------------------------------: |
+    | **PUBLIC**      | An address from public proxy lists.                                                              | <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>  |
+    | **PRIVATE**     | An address purchased from a proxy seller with limited number of users.                           | <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>  |
+    | **RESIDENTIAL** | An proxy address that uses a real IP from a home device to make connection appear as legitimate. | <Badge color="purple">ᴘʀᴇᴍɪᴜᴍ</Badge> |
+    | **OWN**         | An pool of addresses managed directly by user with `,ownproxies` command.                        | <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>  |
 
     <Tip>
       You can enter country in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format after colon to connect only from proxy address that belongs to specified country, e.g. `private:pl` means you'll be connected using private proxy address with ip address from Poland.
     </Tip>
   </Tab>
   <Tab title="Name">
-    The name under which you'll connect with remote server.\
-    **Length:** 3 - 16
+    The name under which user will connect with remote server.
 
     <Tip>
       You can also use a string generator options in parameter name, e.g. `[n:5]` , `[real]` , `[n:2]_esPr0xy_[s:4]` etc., available options are listed below.
 
-      | Option     | Brief                                          | Example Result                  |
-      | :--------: | :--------------------------------------------: | :-----------------------------: |
-      | **[s:α]**  | Letter-only random string with **α length**.   | wvDzTTaV, yyGbVVPo, etc.        |
-      | **[n:α]**  | Digit-only random string with **α length**.    | 24521235, 39002113, etc.        |
-      | **[r:α]**  | Random string with **α length**.               | sw9vDzTwMu, TE60fLswqu etc.     |
-      | **[real]** | An real nickname generated using common words. | MasterMind666\_, GoMen2233 etc. |
+      | Option     | Brief                                          | Example Result  |
+      | :--------: | ---------------------------------------------- | :-------------: |
+      | **[s:α]**  | Letter-only random string with **α length**.   | wvDzTTaV        |
+      | **[n:α]**  | Digit-only random string with **α length**.    | 24521235        |
+      | **[r:α]**  | Random string with **α length**.               | sw9vDzTwMu      |
+      | **[real]** | An real nickname generated using common words. | MasterMind666\_ |
     </Tip>
   </Tab>
 </Tabs>
