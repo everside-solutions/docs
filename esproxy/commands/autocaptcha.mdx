@@ -1,0 +1,162 @@
+---
+title: ",autocaptcha"
+---
+
+**Group:** <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>\
+**Aliases:** `,captcha`
+
+### Description
+
+A highly configurable command that allows user to bypass captcha provided by server.
+
+### Commands
+
+<Tabs>
+  <Tab title="player">
+    **Usage:** `,autocaptcha player`\
+    Toggles automatic captcha solving for player.
+  </Tab>
+  <Tab title="bots">
+    **Usage:** `,autocaptcha bots`\
+    Toggles automatic captcha solving for bots.
+  </Tab>
+  <Tab title="config">
+    **Usage:** `,autocaptcha config`\
+    Opens autocaptcha configuration interface.
+
+    <Frame caption="AutoCaptcha Configuration GUI">
+      <img
+        src="/esproxy/assets/img/esproxy$gui$captcha-config$main.png"
+        alt="Esproxy$gui$captcha Config$main"
+        title="Esproxy$gui$captcha Config$main"
+        className="mx-auto"
+        style={{ width:"85%" }}
+      />
+    </Frame>
+  </Tab>
+</Tabs>
+
+### **Available Modes**
+
+<Tabs>
+  <Tab title="Chat">
+    **Group:** <Badge color="blue">ѕᴛᴀɴᴅᴀʀᴅ</Badge>\
+    **Daily Quota:** <Badge color="yellow">ᴜɴʟɪᴍɪᴛᴇᴅ</Badge>
+
+    ### Trigger Pattern
+
+    A trigger pattern is point at which autocaptcha will be initiated. In trigger pattern, you can define the position of code once using `{}` in place where code is.
+
+    Trigger pattern can be specified directly in `,autocaptcha config` interface using dialog, or using dedicated command `,autocaptcha trigger <pattern>` .
+
+    <Frame caption="Trigger Pattern Dialog">
+      <img
+        src="/esproxy/assets/img/esproxy$dialog$captcha-config$trigger-pattern.png"
+        alt="Esproxy$dialog$captcha Config$trigger Pattern"
+        title="Esproxy$dialog$captcha Config$trigger Pattern"
+        className="mx-auto"
+        style={{ width:"60%" }}
+      />
+    </Frame>
+    <Tip>
+      You can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) in pattern dialog and/or command, but it's functionality is limited.
+    </Tip>
+    ### Answer Pattern
+
+    An answer pattern is a pattern that autocaptcha will respond to the server with, accepting `{}` as the code detected by trigger pattern.
+
+    Answer pattern can be specified directly in `,autocaptcha config` interface using dialog, or using dedicated command `,autocaptcha answer <pattern>` .
+
+    <Frame caption="Answer Pattern Dialog">
+      <img
+        src="/esproxy/assets/img/esproxy$dialog$captcha-config$answer-pattern.png"
+        alt="Esproxy$dialog$captcha Config$answer Pattern"
+        title="Esproxy$dialog$captcha Config$answer Pattern"
+        className="mx-auto"
+        style={{ width:"60%" }}
+      />
+    </Frame>
+    **Examples:**
+
+    <AccordionGroup>
+      <Accordion title="Please register using /register <password> <password> I4MN0t3p5t31n">
+        **Trigger Pattern:** `/register <password> <password> {}`\
+        **Answer Pattern:** `/register PP55w0rd PP55w0rd {}`\
+        **AutoCaptcha Output:** `/register PP55w0rd PP55w0rd I4MN0t3p5t31n`
+      </Accordion>
+      <Accordion title="Use /captcha 4fr1c4 to verify yourself.">
+        **Trigger Pattern:** `/captcha {}`\
+        **Answer Pattern:** `/captcha {}`\
+        **AutoCaptcha Output:** `/captcha 4fr1c4`
+      </Accordion>
+    </AccordionGroup>
+    ### Example Usage Video
+
+    <video src="/esproxy/assets/video/esproxy$command$autocaptcha$type$chat.mp4" controls={true} />
+  </Tab>
+  <Tab title="Map">
+    **Group:** <Badge color="purple">ᴘʀᴇᴍɪᴜᴍ</Badge>\
+    **Daily Quota:** <Badge color="yellow">1000 captchas</Badge>
+
+    ### Trigger Pattern
+
+    A trigger pattern is point from which autocaptcha will wait for captcha map from server.
+
+    Trigger pattern can be specified directly in `,autocaptcha config` interface using dialog, or using dedicated command `,autocaptcha trigger <pattern>` .
+
+    <Frame caption="Trigger Pattern Dialog">
+      <img
+        src="/esproxy/assets/img/esproxy$dialog$captcha-config$trigger-pattern.png"
+        alt="Esproxy$dialog$captcha Config$trigger Pattern"
+        title="Esproxy$dialog$captcha Config$trigger Pattern"
+        className="mx-auto"
+        style={{ width:"60%" }}
+      />
+    </Frame>
+    <Tip>
+      You can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) in pattern dialog and/or command, but it's functionality is limited.
+    </Tip>
+    ### Answer Pattern
+
+    An answer pattern is a pattern that autocaptcha will respond to the server with, accepting `{}` as the code detected by image processing artifical intelligence model.
+
+    Answer pattern can be specified directly in `,autocaptcha config` interface using dialog, or using dedicated command `,autocaptcha answer <pattern>` .
+
+    <Frame caption="Answer Pattern Dialog">
+      <img
+        src="/esproxy/assets/img/esproxy$dialog$captcha-config$answer-pattern.png"
+        alt="Esproxy$dialog$captcha Config$answer Pattern"
+        title="Esproxy$dialog$captcha Config$answer Pattern"
+        className="mx-auto"
+        style={{ width:"60%" }}
+      />
+    </Frame>
+    **Examples:**
+
+    <AccordionGroup>
+      <Accordion title="Write code from map on chat.">
+        **Trigger Pattern:** `code|map`\
+        **Answer Pattern:** ` {}`\
+        **AutoCaptcha Output:** `H3l105`
+      </Accordion>
+      <Accordion title="Use /register <password> <password> <code>">
+        **Trigger Pattern:** `/register <password> <password> <code>`\
+        **Answer Pattern:** `/register PP55w0rd PP55w0rd {}`\
+        **AutoCaptcha Output:** `/register PP55w0rd PP55w0rd D3b1l`
+      </Accordion>
+    </AccordionGroup>
+    ### Example Usage Video
+
+    <video src="/esproxy/assets/video/esproxy$command$autocaptcha$type$map.mp4" controls={true} />
+
+    <Note>
+      Our artificial intelligence model is trained to automatically detect captcha code location on map, so there is no need to specify exactly where on the map code is located. Even if there is additional text on the map other than the captcha, our model will only read the captcha code.
+    </Note>
+  </Tab>
+  <Tab title="Structure">
+    <Warning>
+      **THIS SECTION IS CURRENTLY UNDOCUMENTED!**\
+      But that type of automatic captcha solving is in my opinion too powerful and it totally destroys ability f0r servers to protect themselves with any form of captcha.
+    </Warning>
+  </Tab>
+</Tabs>
