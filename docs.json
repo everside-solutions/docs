@@ -38,6 +38,7 @@
             "pages": [
               "esproxy/commands/connect",
               "esproxy/commands/connectbot",
+              "esproxy/commands/protocol",
               "esproxy/commands/mother"
             ]
           }
@@ -47,12 +48,7 @@
   },
   "logo": "/assets/img/branding.svg",
   "navbar": {
-    "links": [],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "links": []
   },
   "contextual": {
     "options": []
