@@ -40,7 +40,8 @@
               "esproxy/commands/connectbot",
               "esproxy/commands/protocol",
               "esproxy/commands/mother",
-              "esproxy/commands/autocaptcha"
+              "esproxy/commands/autocaptcha",
+              "esproxy/commands/incognito"
             ]
           }
         ]
